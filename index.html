@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>跳转中...</p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code") || "default";
+
+        const androidDeepLink = `myapp://open?code=${code}`;
+        const iosUniversalLink = `https://xxx.onrender.com/link/app?code=${code}`;
+
+        const ua = navigator.userAgent;
+
+        if (/android/i.test(ua)) {
+            window.location.href = androidDeepLink;
+        } else if (/iphone|ipad|ipod/i.test(ua)) {
+            window.location.href = iosUniversalLink;
+        } else {
+            document.body.innerHTML = "请在手机上打开链接";
+        }
+    </script>
+</body>
+
+</html>
