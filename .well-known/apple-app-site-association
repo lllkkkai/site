@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "AB12C34DE5.com.example.amimi_flutter",
+        "paths": [ "/?code=*", "/link/app/*" ]
+      }
+    ]
+  }
+}
