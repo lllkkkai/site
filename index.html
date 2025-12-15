@@ -1,26 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>跳转中</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
 <body>
-    <p>跳转中...</p>
+  <p>正在跳转，请稍候…</p>
 
-    <script>
-        const params = new URLSearchParams(window.location.search);
-        const code = params.get("code") || "default";
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const code = params.get("code") || "";
 
-        const androidDeepLink = `myapp://open?code=${code}`;
-        const iosUniversalLink = `https://xxx.onrender.com/link/app?code=${code}`;
+      const targetUrl =
+        `https://amimi-h5.onrender.com/?code=${encodeURIComponent(code)}`;
 
-        const ua = navigator.userAgent;
-
-        if (/android/i.test(ua)) {
-            window.location.href = androidDeepLink;
-        } else if (/iphone|ipad|ipod/i.test(ua)) {
-            window.location.href = iosUniversalLink;
-        } else {
-            document.body.innerHTML = "请在手机上打开链接";
-        }
-    </script>
+      window.location.replace(targetUrl);
+    })();
+  </script>
 </body>
-
 </html>
