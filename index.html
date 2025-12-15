@@ -2,23 +2,17 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <title>跳转中</title>
+  <title>打开 App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <p>正在跳转，请稍候…</p>
+  <p>如果您在手机上打开此链接，系统会自动跳转到 App。</p>
 
-  <script>
-    (function () {
-      const params = new URLSearchParams(window.location.search);
-      const code = params.get("code") || "";
+  <!-- 直接点击链接即可触发 Android App Links -->
+  <a href="https://amimi-h5.onrender.com/?code=abc">点击打开 App</a>
 
-      const targetUrl =
-        `https://amimi-h5.onrender.com/?code=${encodeURIComponent(code)}`;
-
-      window.location.replace(targetUrl);
-    })();
-  </script>
+  <!-- 可选提示，非 Android / 未安装 App 时 -->
+  <p>如果没有跳转，请手动复制链接到手机浏览器或下载 App。</p>
 </body>
 </html>
