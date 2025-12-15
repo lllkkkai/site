@@ -3,9 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.your.app",
+      "package_name": "com.example.amimi_flutter",
       "sha256_cert_fingerprints": [
-        "AA:BB:CC:DD:EE:FF:..."
+        "BB:FF:7B:78:2E:1B:E2:E8:FC:A3:6B:06:AC:EB:A1:9D:6B:DB:B7:B8:35:31:57:BD:31:17:19:88:75:66:14:54"
       ]
     }
   }
